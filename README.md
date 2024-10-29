@@ -1,3 +1,0 @@
-# Kashyaps nvim config
-
-
