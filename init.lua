@@ -32,6 +32,9 @@ require("lazy").setup({
         datetime = { format = "%a %b %d, %H:%M" },        -- Custom datetime format
         disable_default_keybindings = false,              -- Use default keybindings
       })
+
+      -- Automatically open the sidebar when Neovim starts
+      vim.cmd("SidebarNvimOpen")
     end,
   },
   -- Add other plugins if needed
