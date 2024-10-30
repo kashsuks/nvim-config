@@ -33,10 +33,16 @@ require("lazy").setup({
         disable_default_keybindings = false,              -- Use default keybindings
       })
 
-      -- Automatically open the sidebar when Neovim starts
-      vim.cmd("SidebarNvimOpen")
+      -- Open sidebar only if it's not already open
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          if vim.fn.exists(":SidebarNvimClose") == 2 then
+            vim.cmd("SidebarNvimClose")
+          end
+          vim.cmd("SidebarNvimOpen")
+        end,
+      })
     end,
   },
   -- Add other plugins if needed
 })
-
