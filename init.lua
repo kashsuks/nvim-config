@@ -14,17 +14,26 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set up Lazy.nvim
+-- Lazy.nvim setup
 require("lazy").setup({
   {
-    "morhetz/gruvbox",  -- Colorscheme
-    lazy = false,       -- Load this plugin immediately
+    "morhetz/gruvbox", -- Gruvbox colorscheme
+    lazy = false,
     config = function()
-      vim.cmd.colorscheme("gruvbox") -- Apply the colorscheme
+      vim.cmd.colorscheme("gruvbox")
+      vim.opt.background = "dark"
     end,
   },
-  -- You can add more plugins here
-  -- Example:
-  -- { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+  {
+    "sidebar-nvim/sidebar.nvim",
+    config = function()
+      require("sidebar-nvim").setup({
+        sections = { "datetime", "git", "diagnostics" },  -- Only include datetime, git, and diagnostics
+        datetime = { format = "%a %b %d, %H:%M" },        -- Custom datetime format
+        disable_default_keybindings = false,              -- Use default keybindings
+      })
+    end,
+  },
+  -- Add other plugins if needed
 })
 
