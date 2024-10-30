@@ -13,7 +13,7 @@ Languages that I frequently use:
 
  1. LazyVim (For package management): https://github.com/LazyVim/LazyVim
  2. Gruvbox (Colorscheme): https://github.com/morhetz/gruvbox
-
+ 3. Sidebar (For file management, git, and diagnostics): https://github.com/sidebar-nvim/sidebar.nvim
 # Future Plans
 
  - Add lsp features for the languages mentioned
