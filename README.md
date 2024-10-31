@@ -17,13 +17,13 @@ Languages that I frequently use:
  4. Nonicons (Icon pack for file logos): https://github.com/yamatsum/nvim-nonicons
  5. Status line (for visual, insert mode, etc): https://github.com/nvim-tree/nvim-web-devicons
  6. Startup: https://github.com/goolord/alpha-nvim
+ 7. Telescope (For fuzzy finder): https://github.com/nvim-telescope/telescope.nvim
 # Future Plans
 
  - Add lsp features for the languages mentioned
- - Add fuzzy finder=
+ - Discord RPC
  - UI elements
  - Font
- - File System
 
 # Reference Links
 
