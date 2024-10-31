@@ -10,9 +10,12 @@ return {
       disable_default_keybindings = false,
     })
 
-    -- Open sidebar only if it is not already open
+    -- Function to open sidebar if not already open
     local function open_sidebar()
-      if vim.fn.winnr('$') > 1 then
+      if vim.fn.winnr('$') == 1 then
+        -- If there's only one window, open the sidebar
+        vim.cmd("SidebarNvimOpen")
+      elseif not vim.tbl_isempty(vim.api.nvim_list_wins()) then
         for _, win in ipairs(vim.api.nvim_list_wins()) do
           local buf = vim.api.nvim_win_get_buf(win)
           if vim.bo[buf].filetype == "sidebar" then
@@ -23,20 +26,12 @@ return {
       end
     end
 
-    -- Automatically open Sidebar when a file is opened
-    vim.api.nvim_create_autocmd("BufEnter", {
+    -- Automatically open Sidebar on VimEnter and when using Telescope
+    vim.api.nvim_create_autocmd({"VimEnter", "BufEnter"}, {
       callback = function()
-        open_sidebar()
-      end,
-    })
-
-    -- Automatically close sidebar on BufLeave
-    vim.api.nvim_create_autocmd("BufLeave", {
-      callback = function()
-        if vim.fn.winnr('$') > 1 then
-          vim.cmd("SidebarNvimClose")
-        end
+        vim.defer_fn(open_sidebar, 100) -- Delay to allow buffer to settle
       end,
     })
   end,
 }
+
