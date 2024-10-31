@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("plugins.init")
+vim.wo.relativenumber = true
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
