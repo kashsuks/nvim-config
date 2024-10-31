@@ -13,12 +13,15 @@ return {
     -- Automatically open Sidebar when a file is opened
     vim.api.nvim_create_autocmd("BufEnter", {
       callback = function()
-        if vim.fn.argc() > 0 then
+        local sidebarOpen = vim.fn.getwininfo(vim.fn.win_getid())[1].bufnr == vim.fn.bufnr('sidebar')
+        
+        if vim.fn.argc() > 0 and not sidebarOpen then
           vim.cmd("SidebarNvimOpen")
-        else
+        elseif vim.fn.argc() == 0 and sidebarOpen then
           vim.cmd("SidebarNvimClose") -- Close the sidebar if no file is open
         end
       end,
     })
   end,
 }
+
