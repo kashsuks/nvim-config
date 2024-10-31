@@ -4,5 +4,6 @@ require("lazy").setup({
   require("plugins.devicons"),
   require("plugins.nonicons"),
   require("plugins.lualine"),
+  require("plugins.alpha"),
 })
 
