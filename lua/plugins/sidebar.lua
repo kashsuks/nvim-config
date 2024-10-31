@@ -10,12 +10,15 @@ return {
       disable_default_keybindings = false,
     })
 
-    -- Automatically open Sidebar when Neovim starts
-    vim.api.nvim_create_autocmd("VimEnter", {
+    -- Automatically open Sidebar when a file is opened
+    vim.api.nvim_create_autocmd("BufEnter", {
       callback = function()
-        vim.cmd("SidebarNvimOpen")
+        if vim.fn.argc() > 0 then
+          vim.cmd("SidebarNvimOpen")
+        else
+          vim.cmd("SidebarNvimClose") -- Close the sidebar if no file is open
+        end
       end,
     })
   end,
 }
-
