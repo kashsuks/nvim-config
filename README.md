@@ -18,6 +18,7 @@ Languages that I frequently use:
  5. Status line (for visual, insert mode, etc): https://github.com/nvim-tree/nvim-web-devicons
  6. Startup: https://github.com/goolord/alpha-nvim
  7. Telescope (For fuzzy finder): https://github.com/nvim-telescope/telescope.nvim
+ 8. Noice (For command line): https://github.com/folke/noice.nvim
 # Future Plans
 
  - Add lsp features for the languages mentioned
