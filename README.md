@@ -14,13 +14,13 @@ Languages that I frequently use:
  1. LazyVim (For package management): https://github.com/LazyVim/LazyVim
  2. Gruvbox (Colorscheme): https://github.com/morhetz/gruvbox
  3. Sidebar (For file management, git, and diagnostics): https://github.com/sidebar-nvim/sidebar.nvim
+ 4. Nonicons (Icon pack for file logos): https://github.com/yamatsum/nvim-nonicons
 # Future Plans
 
  - Add lsp features for the languages mentioned
  - Add fuzzy finder
  - Add a nice look startup
  - UI elements
- - Logo
  - Font
  - File System
 
