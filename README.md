@@ -16,11 +16,11 @@ Languages that I frequently use:
  3. Sidebar (For file management, git, and diagnostics): https://github.com/sidebar-nvim/sidebar.nvim
  4. Nonicons (Icon pack for file logos): https://github.com/yamatsum/nvim-nonicons
  5. Status line (for visual, insert mode, etc): https://github.com/nvim-tree/nvim-web-devicons
+ 6. Startup: https://github.com/goolord/alpha-nvim
 # Future Plans
 
  - Add lsp features for the languages mentioned
- - Add fuzzy finder
- - Add a nice look startup
+ - Add fuzzy finder=
  - UI elements
  - Font
  - File System
