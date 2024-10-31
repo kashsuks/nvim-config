@@ -15,6 +15,7 @@ Languages that I frequently use:
  2. Gruvbox (Colorscheme): https://github.com/morhetz/gruvbox
  3. Sidebar (For file management, git, and diagnostics): https://github.com/sidebar-nvim/sidebar.nvim
  4. Nonicons (Icon pack for file logos): https://github.com/yamatsum/nvim-nonicons
+ 5. Status line (for visual, insert mode, etc): https://github.com/nvim-tree/nvim-web-devicons
 # Future Plans
 
  - Add lsp features for the languages mentioned
