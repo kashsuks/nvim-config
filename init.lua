@@ -1,3 +1,4 @@
+
 -- init.lua
 
 -- Ensure Lazy.nvim is installed and loaded
@@ -14,35 +15,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Lazy.nvim setup
-require("lazy").setup({
-  {
-    "morhetz/gruvbox", -- Gruvbox colorscheme
-    lazy = false,
-    config = function()
-      vim.cmd.colorscheme("gruvbox")
-      vim.opt.background = "dark"
-    end,
-  },
-  {
-    "sidebar-nvim/sidebar.nvim",
-    config = function()
-      require("sidebar-nvim").setup({
-        sections = { "datetime", "git", "diagnostics" },  -- Only include datetime, git, and diagnostics
-        datetime = { format = "%a %b %d, %H:%M" },        -- Custom datetime format
-        disable_default_keybindings = false,              -- Use default keybindings
-      })
+-- Load plugin configurations
+require("plugins.init")
 
-      -- Open sidebar only if it's not already open
-      vim.api.nvim_create_autocmd("VimEnter", {
-        callback = function()
-          if vim.fn.exists(":SidebarNvimClose") == 2 then
-            vim.cmd("SidebarNvimClose")
-          end
-          vim.cmd("SidebarNvimOpen")
-        end,
-      })
-    end,
-  },
-  -- Add other plugins if needed
+-- Run Lazy sync automatically on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("lazy").sync()
+  end,
 })
+
