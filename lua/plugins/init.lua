@@ -3,5 +3,6 @@ require("lazy").setup({
   require("plugins.sidebar"),
   require("plugins.devicons"),
   require("plugins.nonicons"),
+  require("plugins.lualine"),
 })
 
